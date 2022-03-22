@@ -234,7 +234,7 @@ CREATE OR REPLACE PROCEDURE agregar_telefono_dueno(
 )
 AS
 BEGIN
-    INSERT INTO TELEFONOS_DUENOS(id_dueno, telefono) values (vid_dueno, vtelefono);
+    INSERT INTO TELEFONOS_DUENO(id_dueno, telefono) values (vid_dueno, vtelefono);
     COMMIT;
 END;
 /
@@ -245,7 +245,7 @@ CREATE OR REPLACE PROCEDURE eliminar_telefono_dueno(
 )
 AS
 BEGIN
-    DELETE FROM TELEFONOS_DUENOS WHERE id_dueno = vid_dueno AND telefono = vtelefono;
+    DELETE FROM TELEFONOS_DUENO WHERE id_dueno = vid_dueno AND telefono = vtelefono;
 END;
 
 /*
@@ -256,4 +256,131 @@ EXECUTE actualizar_dueno(2, 'Juan Perez', '12345678', 'Calle 123', '12345678');
 */
 
 
-/* ################# PROCEDIMIENTOS DE MASCOTAS ########### */
+/* ################# PROCEDIMIENTOS DE MEDICOS ########### */
+CREATE OR REPLACE PROCEDURE insertar_medico(
+    vnombre_completo in VARCHAR2,
+    vtelefono_residencia in VARCHAR2,
+    identificacion in VARCHAR2,
+    vdireccion_residencia in VARCHAR2,
+    vatiende_emergencias in char,
+    vfecha_ingreso date
+)
+AS
+BEGIN
+    INSERT INTO MEDICOS(nombre_completo, telefono_residencia, identificacion, direccion_residencia, atiende_emergencias, fecha_ingreso) values (vnombre_completo, vtelefono_residencia, identificacion, vdireccion_residencia, vatiende_emergencias, vfecha_ingreso);
+    COMMIT;
+END;
+/
+
+CREATE OR REPLACE PROCEDURE actualizar_medico(
+    vid_medico in number,
+    vnombre_completo in VARCHAR2,
+    vtelefono_residencia in VARCHAR2,
+    identificacion in VARCHAR2,
+    vdireccion_residencia in VARCHAR2,
+    vatiende_emergencias in char,
+    vfecha_ingreso date
+)
+AS
+BEGIN
+    UPDATE MEDICOS SET nombre_completo = vnombre_completo, telefono_residencia = vtelefono_residencia, identificacion = identificacion, direccion_residencia = vdireccion_residencia, atiende_emergencias = vatiende_emergencias, fecha_ingreso = vfecha_ingreso WHERE id_medico = vid_medico;
+    COMMIT;
+END;
+/
+
+CREATE OR REPLACE PROCEDURE eliminar_medico(
+    vid_medico in number
+)
+AS
+BEGIN
+    DELETE FROM MEDICOS WHERE id_medico = vid_medico;
+    COMMIT;
+END;
+/
+
+
+/* ################# PROCEDIMIENTOS DE PACIENTES ########### */
+CREATE OR REPLACE PROCEDURE insertar_paciente(
+    vnombre in varchar2,
+    vid_raza in number,
+    vid_dueno in number,
+    vid_medico_cabecera in number,
+    vurl_foto in varchar2,
+    vfecha_primera_cita DATE
+)
+AS
+BEGIN
+    INSERT INTO PACIENTE(nombre, id_raza, id_dueno, id_medico_cabecera, url_foto, fecha_primera_cita) values (vnombre, vid_raza, vid_dueno, vid_medico_cabecera, vurl_foto, vfecha_primera_cita);
+    COMMIT;
+END;
+/
+
+CREATE OR REPLACE PROCEDURE actualizar_paciente(
+    vid_paciente in number,
+    vnombre in varchar2,
+    vid_raza in number,
+    vid_dueno in number,
+    vid_medico_cabecera in number,
+    vurl_foto in varchar2,
+    vfecha_primera_cita DATE
+)
+AS
+BEGIN
+    UPDATE PACIENTE SET nombre = vnombre, id_raza = vid_raza, id_dueno = vid_dueno, id_medico_cabecera = vid_medico_cabecera, url_foto = vurl_foto, fecha_primera_cita = vfecha_primera_cita WHERE id_paciente = vid_paciente;
+    COMMIT;
+END;
+/
+
+CREATE OR REPLACE PROCEDURE eliminar_paciente(
+    vid_paciente in number
+)
+AS
+BEGIN
+    DELETE FROM PACIENTE WHERE id_paciente = vid_paciente;
+    COMMIT;
+END;
+/
+
+
+/* ################# PROCEDIMIENTOS DE CITAS ########### */
+CREATE OR REPLACE PROCEDURE ingresar_cita(
+    vfecha in date,
+    vid_paciente in number,
+    vdescripcion in varchar2,
+    vid_cirugia in number,
+    vid_medico in number,
+    vfecha_programacion in date
+)
+AS
+BEGIN
+    INSERT INTO CITAS(fecha, id_paciente, descripcion, id_cirugia, id_medico, fecha_programacion) values (vfecha, vid_paciente, vdescripcion, vid_cirugia, vid_medico, vfecha_programacion);
+    COMMIT;
+END;
+/
+
+CREATE OR REPLACE PROCEDURE actualizar_cita(
+    vid_cita in number,
+    vfecha in date,
+    vid_paciente in number,
+    vdescripcion in varchar2,
+    vid_cirugia in number,
+    vid_medico in number,
+    vfecha_programacion in date
+)
+AS
+BEGIN
+    UPDATE CITAS SET fecha = vfecha, id_paciente = vid_paciente, descripcion = vdescripcion, id_cirugia = vid_cirugia, id_medico = vid_medico, fecha_programacion = vfecha_programacion WHERE id_cita = vid_cita;
+    COMMIT;
+END;
+/
+
+CREATE OR REPLACE PROCEDURE eliminar_cita(
+    vid_cita in number
+)
+AS
+BEGIN
+    DELETE FROM CITAS WHERE id_cita = vid_cita;
+    COMMIT;
+END;
+/
+
