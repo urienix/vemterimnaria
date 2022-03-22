@@ -2,11 +2,13 @@
     <!-- Sidebar -->
     <nav id="sidebar">
         <div class="sidebar-header">
-            <h3>Bootstrap Sidebar</h3>
+            <h6>Vemterimnaria</h6>
+            <center>
+                <img src="/images/vemterimnaria.png" alt="logo" class="rounded" style="width: 200px;">
+            </center>
         </div>
 
         <ul class="list-unstyled components">
-            <p>Dummy Heading</p>
             <li class="active">
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -45,19 +47,28 @@
                 <a href="#">Contact</a>
             </li>
         </ul>
-
     </nav>
-    <!-- Page Content -->
-    <div id="content">
 
+
+    <div id="content">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
 
                 <button type="button" id="sidebarCollapse" class="btn btn-info">
                     <i class="fas fa-align-left"></i>
-                    <span>Toggle Sidebar</span>
+                    <span>Menu</span>
                 </button>
+
             </div>
         </nav>
     </div>
+
 </div>
+
+<script>
+    window.onload = () =>{
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    }
+</script>
