@@ -9,14 +9,17 @@
                     </div>
                     <div class="text-center mt-4">
                         <p>INICIO DE SESION</p>
-                        <form id="loginForm">
+                        <form id="loginForm" action="/" method="post">
+                            {{#if error}}
+                            <p class="nes-text is-error text-center" style="max-width: 300px;">{{error}}</p>
+                            {{/if}}
                             <div class="nes-field mb-4">
-                                <input type="text" class="nes-input is-white" placeholder="usuario">
+                                <input type="text" class="nes-input is-white" name="usuario" placeholder="usuario">
                             </div>
                             <div class="nes-field mb-4">
-                                <input type="password" class="nes-input is-white" placeholder="contraseña">
+                                <input type="password" class="nes-input is-white" name="contrasena" placeholder="contraseña">
                             </div>
-                            <button type="submit" class="nes-btn is-primary">Ingresar</button>
+                            <button type="submit" class="nes-btn is-primary" style="padding: 5px !important;">Ingresar</button>
                         </form>
                     </div>
                 </div>

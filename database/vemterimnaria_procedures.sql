@@ -7,6 +7,22 @@ DE ESTA MANERA AHORRAMOS EL ROLLBACK QUE SE EJECUTARÍA SI UNO DE LOS PROCESOS
 LLEGARA A FALLAR
 */
 
+CREATE OR REPLACE PROCEDURE insertar_usuario(
+    usuario in VARCHAR2,
+    nombre_completo in VARCHAR2,
+    telefono in varchar2,
+    direccion_residencia in varchar2,
+    contrasena in VARCHAR2,
+    nuevo_usuario_id out NUMBER
+)
+AS
+BEGIN
+    INSERT INTO Usuarios(usuario, nombre_completo, telefono, direccion_residencia, contrasena)
+    VALUES(usuario, nombre_completo, telefono, direccion_residencia, contrasena)
+    RETURNING id_usuario INTO nuevo_usuario_id;
+    COMMIT;
+END;
+/
 
 /* ################# PROCEDIMIENTOS DE CIRUGIAS ########### */
 CREATE OR REPLACE PROCEDURE insertar_cirugia(
@@ -195,11 +211,13 @@ CREATE OR REPLACE PROCEDURE insertar_dueno(
     vnombre_completo in VARCHAR2,
     videntificacion in VARCHAR2,
     vdireccion_residencia in VARCHAR2,
-    vtelefono_residencia in VARCHAR2
+    vtelefono_residencia in VARCHAR2,
+    vnuevo_dueno_id out NUMBER
 )
 AS
 BEGIN
-    INSERT INTO DUENOS(nombre_completo, identificacion, direccion_residencia, telefono_residencia) values (vnombre_completo, videntificacion, vdireccion_residencia, vtelefono_residencia);
+    INSERT INTO DUENOS(nombre_completo, identificacion, direccion_residencia, telefono_residencia) values (vnombre_completo, videntificacion, vdireccion_residencia, vtelefono_residencia)
+    RETURNING id_dueno INTO vnuevo_dueno_id;
     COMMIT;
 END;
 /

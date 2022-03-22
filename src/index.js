@@ -4,6 +4,7 @@ const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const helpers = require('./helpers/handlebars');
+const createMainUser = require('./libs/createmainuser');
 
 require('dotenv').config();
 const app = express();
@@ -22,8 +23,7 @@ app.engine('.hbs', exphbs.engine({
 app.set('view engine', '.hbs');
 
 // middlewares
-app.use(bodyParser.urlencoded({ limit: '50mb', extended: true, parameterLimit: 50000 }));
-app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({extended: true }));
 app.use(cookieParser());
 
 // Routes
@@ -32,6 +32,7 @@ app.use(require('./routes/index'));
 // Public
 app.use(express.static(path.join(__dirname, 'public')));
 
+createMainUser();
 //error response
 /*
 app.use(function(req, res, next) {

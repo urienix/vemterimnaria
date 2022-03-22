@@ -7,7 +7,7 @@
             <div class="nes-container w-100 mt-4">
                 <div class="d-flex w-100 mb-2 justify-content-between">
                     <h3>Dueños</h3>
-                    <button class="nes-btn is-success">+ Nuevo</button>
+                    <a class="nes-btn is-success" href="/duenos/nuevo" style="padding: 2px;">+ Crear dueño</a>
                 </div>
 
                 <div class="nes-table-responsive">
@@ -22,66 +22,20 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {{#each duenos}}
                             <tr>
-                                <td>Jairo Uriel Medranos Ramos</td>
-                                <td>0512199802616</td>
-                                <td>Col la Kennedy 2nda entrada, media cuadra despues de baleadas kennedy</td>
-                                <td class="text-center">000000000</td>
+                                <td>{{NOMBRE_COMPLETO}}</td>
+                                <td>{{IDENTIFICACION}}</td>
+                                <td>{{DIRECCION_RESIDENCIA}}</td>
+                                <td class="text-center">{{TELEFONO_RESIDENCIA}}</td>
                                 <td class="text-center">
                                     <div class="btn-group">
-                                        <button type="button" class="nes-btn is-warning" title="Editar"><i class="mdi mdi-pencil"></i></button>
-                                        <button type="button" class="nes-btn is-error" title="Borrar"><i class="mdi mdi-trash-can"></i></button>
+                                        <button type="button" class="nes-btn is-warning" title="Editar" dueno-id="{{ID_DUENO}}" data-function="editar"><i class="mdi mdi-pencil"></i></button>
+                                        <button type="button" class="nes-btn is-error" title="Borrar" dueno-id="{{ID_DUENO}}" data-function="eliminar"><i class="mdi mdi-trash-can"></i></button>
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Jairo Uriel Medranos Ramos</td>
-                                <td>0512199802616</td>
-                                <td>Col la Kennedy 2nda entrada, media cuadra despues de baleadas kennedy</td>
-                                <td class="text-center">000000000</td>
-                                <td class="text-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="nes-btn is-warning" title="Editar"><i class="mdi mdi-pencil"></i></button>
-                                        <button type="button" class="nes-btn is-error" title="Borrar"><i class="mdi mdi-trash-can"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Jairo Uriel Medranos Ramos</td>
-                                <td>0512199802616</td>
-                                <td>Col la Kennedy 2nda entrada, media cuadra despues de baleadas kennedy</td>
-                                <td class="text-center">000000000</td>
-                                <td class="text-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="nes-btn is-warning" title="Editar"><i class="mdi mdi-pencil"></i></button>
-                                        <button type="button" class="nes-btn is-error" title="Borrar"><i class="mdi mdi-trash-can"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Jairo Uriel Medranos Ramos</td>
-                                <td>0512199802616</td>
-                                <td>Col la Kennedy 2nda entrada, media cuadra despues de baleadas kennedy</td>
-                                <td class="text-center">000000000</td>
-                                <td class="text-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="nes-btn is-warning" title="Editar"><i class="mdi mdi-pencil"></i></button>
-                                        <button type="button" class="nes-btn is-error" title="Borrar"><i class="mdi mdi-trash-can"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Jairo Uriel Medranos Ramos</td>
-                                <td>0512199802616</td>
-                                <td>Col la Kennedy 2nda entrada, media cuadra despues de baleadas kennedy</td>
-                                <td class="text-center">000000000</td>
-                                <td class="text-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="nes-btn is-warning" title="Editar"><i class="mdi mdi-pencil"></i></button>
-                                        <button type="button" class="nes-btn is-error" title="Borrar"><i class="mdi mdi-trash-can"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
+                            {{/each}}
                         </tbody>
                     </table>
                 </div>
