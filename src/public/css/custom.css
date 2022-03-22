@@ -12,6 +12,7 @@
 
 *{
     font-family: 'Press Start 2P';
+    font-size: 11px;
 }
 
 
@@ -23,19 +24,19 @@ a, a:hover, a:focus {
 
 #sidebar {
     /* don't forget to add all the previously mentioned styles here too */
-    background: #7386D5;
+    background: #108DE0;
     color: #fff;
     transition: all 0.3s;
 }
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: #108DE0;
 }
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+    border-bottom: 1px solid #108DE0;
 }
 
 #sidebar ul p {
@@ -49,19 +50,19 @@ a, a:hover, a:focus {
     display: block;
 }
 #sidebar ul li a:hover {
-    color: #7386D5;
+    color: #108DE0;
     background: #fff;
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
+    background: #108DE0;
 }
 
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
+    background: #108DE0;
 }
 
 a[data-toggle="collapse"] {
@@ -105,25 +106,39 @@ a[data-toggle="collapse"] {
     transition: all 0.3s;
 }
 
+.navitem{
+    color: #fff;
+}
+
+.navitem:hover{
+    background-color: #209CEE !important;
+    color: #fff !important;
+}
 
 a{
-    color: #fff !important;
     text-decoration: none !important;
+}
+
+.hoverlement:hover{
+    background-color: #209CEE;
+    color: #fff;
 }
 
 .active{
     color: #fff !important;
-    background: #6d7fcc !important;
+    background: #209CEE !important;
 }
 
-.active:hover{
-    color: #6d7fcc;
-    background-color: #fff;
+button:enabled{
+    cursor: url(/vendors/nes.css/assets/cursor-click.png), pointer !important;
 }
 
-a:hover{
-    color: #6d7fcc !important;
-    text-decoration: none !important;
+button{
+    padding: 0px 5px 0px 5px !important;
+}
+
+.mdi{
+    font-size: 1.5em;
 }
 
 @media (max-width: 768px) {

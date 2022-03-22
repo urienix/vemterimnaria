@@ -1,72 +1,97 @@
 <div class="wrapper">
-    <!-- Sidebar -->
-    <nav id="sidebar">
-        <div class="sidebar-header">
-            <h6>Vemterimnaria</h6>
-            <center>
-                <img src="/images/vemterimnaria.png" alt="logo" class="rounded" style="width: 200px;">
-            </center>
-        </div>
-
-        <ul class="list-unstyled components">
-            <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li>
-                        <a href="#">Home 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 3</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="#">Page 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 3</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Portfolio</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
-        </ul>
-    </nav>
-
-
+    {{>navigation}}
     <div id="content">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
+        {{>navtop}}
 
-                <button type="button" id="sidebarCollapse" class="btn btn-info">
-                    <i class="fas fa-align-left"></i>
-                    <span>Menu</span>
-                </button>
+        <div class="container-fluid">
+            <div class="nes-container w-100 mt-4">
+                <div class="d-flex w-100 mb-2 justify-content-between">
+                    <h3>Dueños</h3>
+                    <button class="nes-btn is-success">+ Nuevo</button>
+                </div>
 
+                <div class="nes-table-responsive">
+                    <table class="nes-table is-bordered is-centered">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Identificación</th>
+                                <th>Residencia</th>
+                                <th>Teléfono residencia</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Jairo Uriel Medranos Ramos</td>
+                                <td>0512199802616</td>
+                                <td>Col la Kennedy 2nda entrada, media cuadra despues de baleadas kennedy</td>
+                                <td class="text-center">000000000</td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="nes-btn is-warning" title="Editar"><i class="mdi mdi-pencil"></i></button>
+                                        <button type="button" class="nes-btn is-error" title="Borrar"><i class="mdi mdi-trash-can"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Jairo Uriel Medranos Ramos</td>
+                                <td>0512199802616</td>
+                                <td>Col la Kennedy 2nda entrada, media cuadra despues de baleadas kennedy</td>
+                                <td class="text-center">000000000</td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="nes-btn is-warning" title="Editar"><i class="mdi mdi-pencil"></i></button>
+                                        <button type="button" class="nes-btn is-error" title="Borrar"><i class="mdi mdi-trash-can"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Jairo Uriel Medranos Ramos</td>
+                                <td>0512199802616</td>
+                                <td>Col la Kennedy 2nda entrada, media cuadra despues de baleadas kennedy</td>
+                                <td class="text-center">000000000</td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="nes-btn is-warning" title="Editar"><i class="mdi mdi-pencil"></i></button>
+                                        <button type="button" class="nes-btn is-error" title="Borrar"><i class="mdi mdi-trash-can"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Jairo Uriel Medranos Ramos</td>
+                                <td>0512199802616</td>
+                                <td>Col la Kennedy 2nda entrada, media cuadra despues de baleadas kennedy</td>
+                                <td class="text-center">000000000</td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="nes-btn is-warning" title="Editar"><i class="mdi mdi-pencil"></i></button>
+                                        <button type="button" class="nes-btn is-error" title="Borrar"><i class="mdi mdi-trash-can"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Jairo Uriel Medranos Ramos</td>
+                                <td>0512199802616</td>
+                                <td>Col la Kennedy 2nda entrada, media cuadra despues de baleadas kennedy</td>
+                                <td class="text-center">000000000</td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="nes-btn is-warning" title="Editar"><i class="mdi mdi-pencil"></i></button>
+                                        <button type="button" class="nes-btn is-error" title="Borrar"><i class="mdi mdi-trash-can"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </nav>
+        </div>
     </div>
-
 </div>
 
 <script>
-    window.onload = () =>{
+    window.onload = () => {
         $('#sidebarCollapse').on('click', function () {
             $('#sidebar').toggleClass('active');
         });
