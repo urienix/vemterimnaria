@@ -241,7 +241,18 @@ CREATE OR REPLACE PROCEDURE eliminar_dueno(
 )
 AS
 BEGIN
+    DELETE FROM TELEFONOS_DUENO WHERE id_dueno = vid_dueno;
     DELETE FROM DUENOS WHERE id_dueno = vid_dueno;
+    COMMIT;
+END;
+/
+
+CREATE OR REPLACE PROCEDURE eliminar_telefono_dueno(
+    vid_dueno in number
+)
+AS
+BEGIN
+    DELETE FROM TELEFONOS_DUENO WHERE id_dueno = vid_dueno;
     COMMIT;
 END;
 /
