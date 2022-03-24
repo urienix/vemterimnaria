@@ -1,0 +1,59 @@
+<div class="wrapper">
+    {{>navigation}}
+    <div id="content">
+        {{>navtop}}
+
+        <div class="container-fluid">
+            <div class="nes-container w-100 mt-4">
+                <div class="d-flex w-100 mb-2 justify-content-between">
+                    <h3>REPORTE DE CITAS</h3>
+                </div>
+
+                <div class="nes-table-responsive">
+                    <table class="nes-table is-bordered is-centered" style="min-width: 99%;">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Mes</th>
+                                <th>Fecha asistencia</th>
+                                <th>Dueño</th>
+                                <th>Telefonos Dueño</th>
+                                <th>Nombre paciente</th>
+                                <th>Especie</th>
+                                <th>Fecha Programacion</th>
+                                <th>Medico</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#if reporte}}
+                            {{#each reporte}}
+                            <tr>
+                                <td>{{NUMERO}}</td>
+                                <td>{{MES}}</td>
+                                <td>{{FECHA_ASISTENCIA}}</td>
+                                <td>{{NOMBRE_DUENO}}</td>
+                                <td>{{TELEFONOS}}</td>
+                                <td>{{NOMBRE_PACIENTE}}</td>
+                                <td>{{ESPECIE}}</td>
+                                <td>{{FECHA_PROGRAMACION}}</td>
+                                <td>{{MEDICO}}</td>
+                            </tr>
+                            {{/each}}
+                            {{else}}
+                            <tr><td colspan="9" class="text-center nes-text is-disabled">No hay citas registradas</td></tr>
+                            {{/if}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.onload = () => {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    }
+</script>

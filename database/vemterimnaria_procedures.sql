@@ -365,16 +365,15 @@ END;
 
 /* ################# PROCEDIMIENTOS DE CITAS ########### */
 CREATE OR REPLACE PROCEDURE ingresar_cita(
-    vfecha in date,
+    vfecha in VARCHAR2,
     vid_paciente in number,
     vdescripcion in varchar2,
     vid_cirugia in number,
-    vid_medico in number,
-    vfecha_programacion in date
+    vid_medico in number
 )
 AS
 BEGIN
-    INSERT INTO CITAS(fecha, id_paciente, descripcion, id_cirugia, id_medico, fecha_programacion) values (vfecha, vid_paciente, vdescripcion, vid_cirugia, vid_medico, vfecha_programacion);
+    INSERT INTO CITAS(fecha, id_paciente, descripcion, id_cirugia, id_medico, fecha_programacion) values (TO_DATE(vfecha, 'yyyy-mm-dd'), vid_paciente, vdescripcion, vid_cirugia, vid_medico, SYSDATE);
     COMMIT;
 END;
 /

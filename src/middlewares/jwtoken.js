@@ -67,7 +67,7 @@ async function checkIfHaveActiveSession(req, res, next) {
     let decoded = jwt.verify(token, configs.SECRET);
     let user = decoded.user;
     if (user) {
-        return res.redirect('/duenos');
+        return res.redirect('/pacientes');
     }else{
         return next();
     }
