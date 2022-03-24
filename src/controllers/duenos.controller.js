@@ -99,7 +99,7 @@ async function listarDuenos(req, res){
 
 async function listarDueno(req, res){
     try {
-        let view_image = '/images/cheemsluck.jpg'
+        let view_image = '/images/cheemsluck.jpg';
         let { vid_dueno } = req.params;
         let dueno = (await pool.query(`SELECT * FROM Duenos WHERE id_dueno = :vid_dueno`, {vid_dueno}));
         if (dueno.length > 0) {

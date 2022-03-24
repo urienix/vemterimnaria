@@ -15,5 +15,9 @@ module.exports = helpers = {
         <a href="#" class="nes-badge">
             <span class="is-error" style="max-width: 50px; margin-left: -20px;">No</span>
         </a>`;
+    },
+
+    setChecked(option, value){
+        return option === value ? 'checked' : '';
     }
 };

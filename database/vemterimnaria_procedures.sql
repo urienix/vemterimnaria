@@ -306,12 +306,11 @@ CREATE OR REPLACE PROCEDURE actualizar_medico(
     vtelefono_residencia in VARCHAR2,
     identificacion in VARCHAR2,
     vdireccion_residencia in VARCHAR2,
-    vatiende_emergencias in char,
-    vfecha_ingreso date
+    vatiende_emergencias in char
 )
 AS
 BEGIN
-    UPDATE MEDICOS SET nombre_completo = vnombre_completo, telefono_residencia = vtelefono_residencia, identificacion = identificacion, direccion_residencia = vdireccion_residencia, atiende_emergencias = vatiende_emergencias, fecha_ingreso = vfecha_ingreso WHERE id_medico = vid_medico;
+    UPDATE MEDICOS SET nombre_completo = vnombre_completo, telefono_residencia = vtelefono_residencia, identificacion = identificacion, direccion_residencia = vdireccion_residencia, atiende_emergencias = vatiende_emergencias WHERE id_medico = vid_medico;
     COMMIT;
 END;
 /
