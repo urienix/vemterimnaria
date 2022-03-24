@@ -2,10 +2,12 @@ const router = require('express').Router();
 const authRoutes = require('./auth.routes');
 const duenosRoutes = require('./duenos.routes');
 const pacientesRoutes = require('./pacientes.routes');
+const medicosRoutes = require('./medicos.routes');
 
 router.use(authRoutes);
 router.use('/duenos', duenosRoutes);
 router.use('/pacientes', pacientesRoutes);
+router.use('/medicos', medicosRoutes);
 
 router.get('/home', (req, res) => {
     res.send('biemvenido a HOME');

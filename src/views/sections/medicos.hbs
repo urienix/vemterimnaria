@@ -1,0 +1,61 @@
+<div class="wrapper">
+    {{>navigation}}
+    <div id="content">
+        {{>navtop}}
+
+        <div class="container-fluid">
+            <div class="nes-container w-100 mt-4">
+                <div class="d-flex w-100 mb-2 justify-content-between">
+                    <h3>Médicos</h3>
+                    <a class="nes-btn is-success" href="/medicos/nuevo" style="padding: 2px;">+ Registrar medico</a>
+                </div>
+
+                <div class="nes-table-responsive">
+                    <table class="nes-table is-bordered is-centered"  style="min-width: 99%;">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Identificación</th>
+                                <th>Residencia</th>
+                                <th>Teléfono residencia</th>
+                                <th>Emergencias</th>
+                                <th>Ingreso</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#if medicos}}
+                            {{#each medicos}}
+                            <tr>
+                                <td>{{NOMBRE_COMPLETO}}</td>
+                                <td>{{IDENTIFICACION}}</td>
+                                <td>{{DIRECCION_RESIDENCIA}}</td>
+                                <td class="text-center">{{TELEFONO_RESIDENCIA}}</td>
+                                <td class="text-center">{{{setEmergencies ATIENDE_EMERGENCIAS}}}</td>
+                                <td>{{INGRESO}}</td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <a class="nes-btn is-warning" title="Editar" href="/medicos/editar/{{ID_MEDICO}}" style="padding: 2px;"><i class="mdi mdi-pencil"></i></a>
+                                        <a class="nes-btn is-error" title="Borrar" href="/medicos/eliminar/{{ID_MEDICO}}" style="padding: 2px;"><i class="mdi mdi-trash-can"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            {{/each}}
+                            {{else}}
+                            <tr><td colspan="7" class="text-center nes-text is-disabled">No hay médicos registrados</td></tr>
+                            {{/if}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.onload = () => {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    }
+</script>

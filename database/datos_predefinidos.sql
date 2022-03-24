@@ -23,6 +23,13 @@ BEGIN
 END;
 
 
+/* INSERCION DE MEDICOS */
+BEGIN
+    INSERTAR_MEDICO('Luis Felipe Zuniga', '98201105', '0612199625435', 'Los Alamos', 0);
+    INSERTAR_MEDICO('Alejandra Perez', '88201105', '0612199665789', 'Res. Centro America', 1);
+END;
+
+select * from MEDICOS;
 
 select * from RAZAS;
 

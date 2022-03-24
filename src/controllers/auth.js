@@ -26,7 +26,7 @@ let login = async (req, res) => {
         res.cookie('session_token', token, {
             maxAge: 1000 * 60 * 60 * 24,
         });
-        res.redirect('/duenos');
+        res.redirect('/pacientes');
     } catch (error) {
         console.log(error);
         return res.status(500).send({

@@ -1,0 +1,63 @@
+<div class="wrapper">
+    {{>navigation}}
+    <div id="content">
+        {{>navtop}}
+        <div class="container-fluid">
+            <div class="nes-container w-100 mt-4 text-center">
+                <h4 class="nes-text is-primary mt-4">INGRESO DE NUEVO MEDICO</h4>
+                <div class="container mt-4 p-4" style="max-width: 700px;">
+                    <form action="/duenos/nuevo" method="post">
+                        <div class="container">
+                            <div class="nes-field mb-4">
+                                <label for="vnombre_completo"> Nombre</label>
+                                <input type="text" name="vnombre_completo" class="nes-input" required>
+                            </div>
+                            <br>
+                            <div class="nes-field mb-4">
+                                <label for="vtelefono_residencia"> Telefono residencia</label>
+                                <input type="text" name="vtelefono_residencia" class="nes-input" required>
+                            </div>
+                            <br>
+                            <div class="nes-field mb-4">
+                                <label for="videntificacion"> Identificación</label>
+                                <input type="text" name="videntificacion" class="nes-input" required>
+                            </div>
+                            <br>
+                            <div class="nes-field mb-4">
+                                <label for="vdireccion_residencia"> Direccion residencia</label>
+                                <textarea name="vdireccion_residencia" class="nes-textarea" required></textarea>
+                            </div>
+                            <br>
+                            <div class="nes-field mb-4">
+                                <div class="nes-container with-title">
+                                    <p class="title" style="margin-top: -20px;"> Atiende emergencias</p>
+                                    <label>
+                                        <input type="radio" class="nes-radio" name="vatiende_emergencias" checked value="1" />
+                                        <span>Si</span>
+                                    </label>
+                                    <label style="min-width: 25px;"></label>
+                                    <label>
+                                        <input type="radio" class="nes-radio" name="vatiende_emergencias" value="0"/>
+                                        <span>No</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <a href="/medicos" class="nes-btn" style="padding: 8px !important;">Cancelar</a>
+                        <button type="submit" class="nes-btn is-success"
+                            style="padding: 8px !important;">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.onload = () => {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    }
+</script>

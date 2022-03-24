@@ -289,14 +289,13 @@ EXECUTE actualizar_dueno(2, 'Juan Perez', '12345678', 'Calle 123', '12345678');
 CREATE OR REPLACE PROCEDURE insertar_medico(
     vnombre_completo in VARCHAR2,
     vtelefono_residencia in VARCHAR2,
-    identificacion in VARCHAR2,
+    videntificacion in VARCHAR2,
     vdireccion_residencia in VARCHAR2,
-    vatiende_emergencias in char,
-    vfecha_ingreso date
+    vatiende_emergencias in char
 )
 AS
 BEGIN
-    INSERT INTO MEDICOS(nombre_completo, telefono_residencia, identificacion, direccion_residencia, atiende_emergencias, fecha_ingreso) values (vnombre_completo, vtelefono_residencia, identificacion, vdireccion_residencia, vatiende_emergencias, vfecha_ingreso);
+    INSERT INTO MEDICOS(nombre_completo, telefono_residencia, identificacion, direccion_residencia, atiende_emergencias, fecha_ingreso) values (vnombre_completo, vtelefono_residencia, videntificacion, vdireccion_residencia, vatiende_emergencias, SYSDATE);
     COMMIT;
 END;
 /
