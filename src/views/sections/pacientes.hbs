@@ -6,8 +6,8 @@
         <div class="container-fluid">
             <div class="nes-container w-100 mt-4">
                 <div class="d-flex w-100 mb-2 justify-content-between">
-                    <h3>Dueños</h3>
-                    <a class="nes-btn is-success" href="/duenos/nuevo" style="padding: 2px;">+ Crear dueño</a>
+                    <h3>Pacientes</h3>
+                    <a class="nes-btn is-success" href="/pacientes/nuevo" style="padding: 2px;">+ nuevo paciente</a>
                 </div>
 
                 <div class="nes-table-responsive">
@@ -15,23 +15,24 @@
                         <thead>
                             <tr>
                                 <th>Nombre</th>
-                                <th>Identificación</th>
-                                <th>Residencia</th>
-                                <th>Teléfono residencia</th>
+                                <th>Raza</th>
+                                <th>Especie</th>
+                                <th>Dueño</th>
+                                <th>Primera cita</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {{#each duenos}}
+                            {{#each pacientes}}
                             <tr>
-                                <td>{{NOMBRE_COMPLETO}}</td>
-                                <td>{{IDENTIFICACION}}</td>
-                                <td>{{DIRECCION_RESIDENCIA}}</td>
-                                <td class="text-center">{{TELEFONO_RESIDENCIA}}</td>
+                                <td>{{NOMBRE}}</td>
+                                <td>{{RAZA}}</td>
+                                <td>{{ESPECIE}}</td>
+                                <td>{{DUENO}}</td>
                                 <td class="text-center">
                                     <div class="btn-group">
-                                        <a class="nes-btn is-warning" title="Editar" href="/duenos/editar/{{ID_DUENO}}" style="padding: 2px;"><i class="mdi mdi-pencil"></i></a>
-                                        <a class="nes-btn is-error" title="Borrar" href="/duenos/eliminar/{{ID_DUENO}}" style="padding: 2px;"><i class="mdi mdi-trash-can"></i></a>
+                                        <a class="nes-btn is-warning" title="Editar" href="/duenos/editar/{{ID_PACIENTE}}" style="padding: 2px;"><i class="mdi mdi-pencil"></i></a>
+                                        <a class="nes-btn is-error" title="Borrar" href="/duenos/eliminar/{{ID_PACIENTE}}" style="padding: 2px;"><i class="mdi mdi-trash-can"></i></a>
                                     </div>
                                 </td>
                             </tr>
