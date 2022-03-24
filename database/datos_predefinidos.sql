@@ -19,6 +19,7 @@ BEGIN
     INSERTAR_RAZA('Pastor Aleman', 4, 12);
     INSERTAR_RAZA('Pastor Belga', 4, 12);
     INSERTAR_RAZA('Pug', 4, 12);
+    INSERTAR_RAZA('Shiba', 4, 12);
 END;
 
 

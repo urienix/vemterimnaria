@@ -1,0 +1,60 @@
+<div class="wrapper">
+    {{>navigation}}
+    <div id="content">
+        {{>navtop}}
+        <div class="container-fluid">
+            <div class="nes-container w-100 mt-4 text-center">
+                <h4 class="nes-text is-primary mt-4">INGRESO DE NUEVO PACIENTE</h4>
+                {{#if error}}
+                <p class="nes-text is-error mt-4 mb-4">{{error}}</p>
+                {{/if}}
+                <div class="container mt-4 p-4" style="max-width: 700px;">
+                    <form action="/pacientes/nuevo" method="post">
+                        <div class="container">
+                            <div class="nes-field mb-4">
+                                <label for="vnombre"> Nombre</label>
+                                <input type="text" name="vnombre" class="nes-input" required>
+                            </div>
+                            <br>
+                            <div class="nes-field mb-4">
+                                <label for="vid_raza">Raza</label>
+                                <div class="nes-select">
+                                    <select required name="vid_raza">
+                                        <option value="" disabled selected hidden>Seleccionar...</option>
+                                        {{#each razas}}
+                                        <option value="{{ID_RAZA}}">{{RAZAS_ANIMALES}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="nes-field mb-4">
+                                <label for="vid_raza">Dueño</label>
+                                <div class="nes-select">
+                                    <select required name="vid_dueno">
+                                        <option value="" disabled selected hidden>Seleccionar...</option>
+                                        {{#each duenos}}
+                                        <option value="{{ID_DUENO}}">{{NOMBRE_COMPLETO}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <a href="/pacientes" class="nes-btn" style="padding: 8px !important;">Cancelar</a>
+                        <button type="submit" class="nes-btn is-success"
+                            style="padding: 8px !important;">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.onload = () => {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    }
+</script>

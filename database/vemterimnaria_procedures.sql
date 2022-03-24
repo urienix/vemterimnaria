@@ -332,14 +332,11 @@ END;
 CREATE OR REPLACE PROCEDURE insertar_paciente(
     vnombre in varchar2,
     vid_raza in number,
-    vid_dueno in number,
-    vid_medico_cabecera in number,
-    vurl_foto in varchar2,
-    vfecha_primera_cita DATE
+    vid_dueno in number
 )
 AS
 BEGIN
-    INSERT INTO PACIENTE(nombre, id_raza, id_dueno, id_medico_cabecera, url_foto, fecha_primera_cita) values (vnombre, vid_raza, vid_dueno, vid_medico_cabecera, vurl_foto, vfecha_primera_cita);
+    INSERT INTO PACIENTE(nombre, id_raza, id_dueno, fecha_primera_cita) values (vnombre, vid_raza, vid_dueno, SYSDATE);
     COMMIT;
 END;
 /
@@ -348,14 +345,11 @@ CREATE OR REPLACE PROCEDURE actualizar_paciente(
     vid_paciente in number,
     vnombre in varchar2,
     vid_raza in number,
-    vid_dueno in number,
-    vid_medico_cabecera in number,
-    vurl_foto in varchar2,
-    vfecha_primera_cita DATE
+    vid_dueno in number
 )
 AS
 BEGIN
-    UPDATE PACIENTE SET nombre = vnombre, id_raza = vid_raza, id_dueno = vid_dueno, id_medico_cabecera = vid_medico_cabecera, url_foto = vurl_foto, fecha_primera_cita = vfecha_primera_cita WHERE id_paciente = vid_paciente;
+    UPDATE PACIENTE SET nombre = vnombre, id_raza = vid_raza, id_dueno = vid_dueno WHERE id_paciente = vid_paciente;
     COMMIT;
 END;
 /
