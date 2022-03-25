@@ -53,15 +53,14 @@ CREATE OR REPLACE TRIGGER idusuarios_trg
 
 CREATE TABLE Auditoria(
     id_auditoria number not null,
-    tabla_objetivo VARCHAR2(45) not null,
-    fecha_ejecucion TIMESTAMP,
-    id_usuario_ejecutor number not null,
-    tipo_transaccion VARCHAR2(15) not null,
+    tabla_objetivo VARCHAR2(45),
+    fecha_ejecucion DATE,
+    usuario_ejecutor VARCHAR2(20),
+    tipo_transaccion VARCHAR2(15),
     descripcion VARCHAR2(45),
-    primary key(id_auditoria),
-    constraint fk_usuario_id
-    foreign key(id_usuario_ejecutor) references Usuarios(id_usuario)
+    primary key(id_auditoria)
 );
+/
 
 CREATE SEQUENCE idauditoria_seq
     START WITH 1
@@ -69,6 +68,7 @@ CREATE SEQUENCE idauditoria_seq
     NOMAXVALUE
     NOCYCLE
     NOCACHE;
+/
 
 CREATE OR REPLACE TRIGGER idauditoria_trg
     BEFORE INSERT ON Auditoria
@@ -78,7 +78,7 @@ CREATE OR REPLACE TRIGGER idauditoria_trg
         INTO :new.id_auditoria
         FROM dual;
     END;
-
+/
 
 /* #################### TABLAS DE LA BASE DE DATOS ########################### */
 
