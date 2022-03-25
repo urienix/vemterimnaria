@@ -436,3 +436,11 @@ CREATE TABLE Turnos_medicos(
     constraint fk_id_turno_turno
     foreign key(id_turno) references Turnos(id_turno)
 );
+
+
+
+CREATE TABLE Control_sistema(
+    id_fecha_actual number not null,
+    fecha_actual date,
+    primary key(id_fecha_actual)
+);
