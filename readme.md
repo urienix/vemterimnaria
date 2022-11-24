@@ -6,9 +6,10 @@ Este es un proyecto desarrollado con fines de aprendizaje para la clase de Admin
 Puedes ver los detalles del proyecto explicados [aquí](https://youtu.be/cl3N-gyy39U)
 ### Tecnologías utilizadas
 - [NodeJS](https://nodejs.org/es) v17.1
-- [Pauquete de Node OracleDB](https://www.npmjs.com/package/oracledb)
+- [Paquete de Node OracleDB](https://www.npmjs.com/package/oracledb)
 - [Bootstrap](https://getbootstrap.com/docs/4.1) v4.1
 - [NES.css](https://nostalgic-css.github.io/NES.css)
+
 ### Capturas de pantalla
 
 ![](docs/assets/vemterimnaria.gif)
@@ -21,6 +22,4 @@ Puedes ver los detalles del proyecto explicados [aquí](https://youtu.be/cl3N-gy
 
 ![](docs/assets/vemterimnaria8.png)
 
-<center>
-Hecho con 💙 por <a href="https://urienix.moe">urienix</a>
-</center>
+Hecho con 💙 por [urienix](https://urienix.moe)
